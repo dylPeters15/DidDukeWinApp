@@ -10,18 +10,18 @@
 
 @interface AppDelegate ()
 
+@property NSString *websiteAsString;
+@property NSString *winLossInfo;
+@property NSString *scoreInfo;
+@property NSURL *scoreURL;
+
 @end
 
 @implementation AppDelegate
 
-NSString *websiteAsString;
 bool hasWinLossInfo;
 bool hasScoreInfo;
 bool hasScoreURL;
-NSString *winLossInfo;
-NSString *scoreInfo;
-NSURL *scoreURL;
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -71,21 +71,21 @@ NSURL *scoreURL;
 }
 
 - (void) setWebsiteAsString {
-    websiteAsString = [self getWebsiteSourceAsString];
+    self.websiteAsString = [self getWebsiteSourceAsString];
 }
 
 - (void) setWinLossInfo {
-    if (websiteAsString == NULL || websiteAsString == nil || [websiteAsString isEqualToString:@""]) {
+    if (self.websiteAsString == NULL || self.websiteAsString == nil || [self.websiteAsString isEqualToString:@""]) {
         hasWinLossInfo = false;
         return;
     }
-    NSString *subString = [websiteAsString substringWithRange:NSMakeRange([websiteAsString rangeOfString:@"</p>"].location-3, 3)];
+    NSString *subString = [self.websiteAsString substringWithRange:NSMakeRange([self.websiteAsString rangeOfString:@"</p>"].location-3, 3)];
     if ([[subString lowercaseString] isEqualToString:@"yes"]){
         hasWinLossInfo = true;
-        winLossInfo = @"YES";
+        self.winLossInfo = @"YES";
     } else if ([[[subString substringFromIndex:1] lowercaseString] isEqualToString:@"no"]){
         hasWinLossInfo = true;
-        winLossInfo = @"NO";
+        self.winLossInfo = @"NO";
     } else {
         hasWinLossInfo = false;
         return;
@@ -96,33 +96,37 @@ NSURL *scoreURL;
     return hasWinLossInfo;
 }
 
+- (void) setHasWinLossInfo:(bool)newHasWinLossInfo{
+    hasWinLossInfo = newHasWinLossInfo;
+}
+
 - (NSString *) getWinLossInfo {
     if ([self hasWinLossInfo]){
-        return winLossInfo;
+        return self.winLossInfo;
     }
     return NULL;
 }
 
 - (void) setScoreInfo {
-    if (websiteAsString == NULL || websiteAsString == nil || [websiteAsString isEqualToString:@""]) {
+    if (self.websiteAsString == NULL || self.websiteAsString == nil || [self.websiteAsString isEqualToString:@""]) {
         hasScoreInfo = false;
         return;
     }
-    NSRange range = [websiteAsString rangeOfString:@"</a>"];
+    NSRange range = [self.websiteAsString rangeOfString:@"</a>"];
     NSUInteger index = range.location;
-    while (index > 0 && [websiteAsString characterAtIndex:index] != (NSUInteger)'>'){
+    while (index > 0 && [self.websiteAsString characterAtIndex:index] != (NSUInteger)'>'){
         index--;
     }
     if (index != 0){
         index++;
     }
-    NSString *substring = [websiteAsString substringWithRange:NSMakeRange(index, range.location-index)];
-    if (substring == NULL || websiteAsString == nil || [substring isEqualToString:@""]){
+    NSString *substring = [self.websiteAsString substringWithRange:NSMakeRange(index, range.location-index)];
+    if (substring == NULL || self.websiteAsString == nil || [substring isEqualToString:@""]){
         hasScoreInfo = false;
         return;
     } else {
         hasScoreInfo = true;
-        scoreInfo = substring;
+        self.scoreInfo = substring;
     }
 }
 
@@ -130,31 +134,35 @@ NSURL *scoreURL;
     return hasScoreInfo;
 }
 
+- (void) setHasScoreInfo:(bool)newHasScoreInfo{
+    hasScoreInfo = newHasScoreInfo;
+}
+
 - (NSString *) getScoreInfo {
     if ([self hasScoreInfo]) {
-        return scoreInfo;
+        return self.scoreInfo;
     }
     return NULL;
 }
 
 - (void) setScoreURL {
-    if (websiteAsString == NULL || websiteAsString == nil || [websiteAsString isEqualToString:@""]) {
+    if (self.websiteAsString == NULL || self.websiteAsString == nil || [self.websiteAsString isEqualToString:@""]) {
         hasScoreURL = false;
         return;
     }
-    NSRange startingRange = [websiteAsString rangeOfString:@"<a href='"];
+    NSRange startingRange = [self.websiteAsString rangeOfString:@"<a href='"];
     NSUInteger index = startingRange.location+startingRange.length;
-    while (index < websiteAsString.length && [websiteAsString characterAtIndex:index] != (NSUInteger)39){
+    while (index < self.websiteAsString.length && [self.websiteAsString characterAtIndex:index] != (NSUInteger)39){
         index++;
     }
-    NSString *substring = [websiteAsString substringWithRange:NSMakeRange(startingRange.location+startingRange.length,index-startingRange.location-startingRange.length)];
+    NSString *substring = [self.websiteAsString substringWithRange:NSMakeRange(startingRange.location+startingRange.length,index-startingRange.location-startingRange.length)];
     NSURL *localScoreURL = [NSURL URLWithString:substring];
     if (localScoreURL == NULL || localScoreURL == nil){
         hasScoreURL = false;
         return;
     } else {
         hasScoreURL = true;
-        scoreURL = localScoreURL;
+        self.scoreURL = localScoreURL;
     }
 }
 
@@ -162,68 +170,16 @@ NSURL *scoreURL;
     return hasScoreURL;
 }
 
+- (void) setHasScoreURL:(bool)newHasScoreURL {
+    hasScoreURL = newHasScoreURL;
+}
+
 - (NSURL *) getScoreURL {
     if ([self hasScoreURL]){
-        return scoreURL;
+        return self.scoreURL;
     }
     return NULL;
 }
-//
-//
-//- (bool) getDukeDidWin {
-//    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
-//    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
-//    if (string == NULL){
-//        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
-//    }
-//    NSString *subString = [string substringWithRange:NSMakeRange([string rangeOfString:@"</p>"].location-2, 2)];
-//    if ([[subString lowercaseString] isEqualToString:@"no"]){
-//        return false;
-//    }
-//    return true;
-//}
-//
-////- (NSUInteger) getDukeScore {
-////    
-////}
-////
-////- (NSUInteger) getOpponentScore {
-////    
-////}
-//
-//- (NSString *) getScoreString {
-//    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
-//    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
-//    if (string == NULL){
-//        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
-//    }
-//    NSRange range = [string rangeOfString:@"</a>"];
-//    NSUInteger index = range.location;
-//    while (index > 0 && [string characterAtIndex:index] != (NSUInteger)'>'){
-//        index--;
-//    }
-//    if (index != 0){
-//        index++;
-//    }
-//    NSString *substring = [string substringWithRange:NSMakeRange(index, range.location-index)];
-//    return substring;
-//}
-//
-//- (NSURL *) getScoreURL {
-//    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
-//    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
-//    if (string == NULL){
-//        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
-//    }
-//    NSRange startingRange = [string rangeOfString:@"<a href='"];
-//    NSUInteger index = startingRange.location+startingRange.length;
-//    while (index < string.length && [string characterAtIndex:index] != (NSUInteger)39){
-//        index++;
-//    }
-//    NSString *substring = [string substringWithRange:NSMakeRange(startingRange.location+startingRange.length,index-startingRange.location-startingRange.length)];
-//    NSURL *scoreURL = [NSURL URLWithString:substring];
-//    return scoreURL;
-//}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
