@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,11 +22,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Vjn-YX-Lgz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GOg-6E-dxY">
+                                <rect key="frame" x="270" y="500" width="60" height="60"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GOg-6E-dxY" firstAttribute="bottom" secondItem="Vjn-YX-Lgz" secondAttribute="bottom" constant="-40" id="5eb-Gc-fTZ"/>
+                            <constraint firstItem="GOg-6E-dxY" firstAttribute="width" secondItem="Vjn-YX-Lgz" secondAttribute="width" multiplier="0.1" id="H0P-mg-xMe"/>
                             <constraint firstItem="Vjn-YX-Lgz" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="JcX-4n-0LJ"/>
+                            <constraint firstItem="GOg-6E-dxY" firstAttribute="height" secondItem="Vjn-YX-Lgz" secondAttribute="width" multiplier="0.1" id="eeT-4t-EO1"/>
                             <constraint firstItem="Vjn-YX-Lgz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fdm-QI-c0m"/>
+                            <constraint firstItem="GOg-6E-dxY" firstAttribute="centerX" secondItem="Vjn-YX-Lgz" secondAttribute="centerX" id="lEc-tj-F8P"/>
                             <constraint firstItem="Vjn-YX-Lgz" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="rOQ-0e-1qK"/>
                             <constraint firstItem="Vjn-YX-Lgz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zrl-91-Rn0"/>
                         </constraints>

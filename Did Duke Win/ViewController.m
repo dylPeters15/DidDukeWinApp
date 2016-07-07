@@ -54,6 +54,13 @@ NSURL *scoreURL;
     NSLog(@"22222");
     if ([(AppDelegate *)[[UIApplication sharedApplication] delegate] hasWinLossInfo]){
         [yesNoTextView setText:[(AppDelegate *)[[UIApplication sharedApplication] delegate] getWinLossInfo]];
+        if ([[yesNoTextView.text lowercaseString] isEqualToString:@"yes"]){
+            [yesNoTextView setTextColor:[UIColor greenColor]];
+        } else if ([[yesNoTextView.text lowercaseString] isEqualToString:@"no"]){
+            [yesNoTextView setTextColor:[UIColor redColor]];
+        } else {
+            [yesNoTextView setTextColor:[UIColor blackColor]];
+        }
     } else {
         [yesNoTextView setText:@""];
     }
