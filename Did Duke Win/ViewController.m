@@ -18,6 +18,8 @@ UITextView *yesNoTextView;
 UIButton *scoreButton;
 NSURL *scoreURL;
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -43,9 +45,17 @@ NSURL *scoreURL;
     
     [self applyConstraints];
     
-    [self updateYesNo];
-    [self updateScore];
-    [self getScoreURL];
+    @try {
+        
+        [self updateYesNo];
+        [self updateScore];
+        [self getScoreURL];
+    } @catch (NSException *exception) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Connect to Internet" message:@"Could not determine if Duke won." delegate:NULL cancelButtonTitle:@"Ok" otherButtonTitles:NULL, nil];
+        [alert show];
+    } @finally {
+        
+    }
 }
 
 -(void) scoreButtonClicked:(UIButton *)button{
@@ -83,6 +93,9 @@ NSURL *scoreURL;
 -(void) updateYesNo {
     NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
     NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+    if (string == NULL){
+        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
+    }
     NSString *subString = [string substringWithRange:NSMakeRange([string rangeOfString:@"</p>"].location-2, 2)];
     UIColor *textColor = [UIColor blackColor];
     NSString *textString = @"";
@@ -101,6 +114,9 @@ NSURL *scoreURL;
 -(void) updateScore {
     NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
     NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+    if (string == NULL){
+        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
+    }
     NSRange range = [string rangeOfString:@"</a>"];
     NSUInteger index = range.location;
     while (index > 0 && [string characterAtIndex:index] != (NSUInteger)'>'){
@@ -117,6 +133,9 @@ NSURL *scoreURL;
 -(void) getScoreURL{
     NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
     NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+    if (string == NULL){
+        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
+    }
     NSRange startingRange = [string rangeOfString:@"<a href='"];
     NSUInteger index = startingRange.location+startingRange.length;
     while (index < string.length && [string characterAtIndex:index] != (NSUInteger)39){
