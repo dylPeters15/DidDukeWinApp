@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		158804C91D2E02A3002DF278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 158804C81D2E02A3002DF278 /* main.m */; };
+		158804CC1D2E02A3002DF278 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 158804CB1D2E02A3002DF278 /* AppDelegate.m */; };
+		158804CF1D2E02A3002DF278 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 158804CE1D2E02A3002DF278 /* ViewController.m */; };
+		158804D21D2E02A3002DF278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158804D01D2E02A3002DF278 /* Main.storyboard */; };
+		158804D51D2E02A3002DF278 /* Did_Duke_Win.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 158804D31D2E02A3002DF278 /* Did_Duke_Win.xcdatamodeld */; };
+		158804D71D2E02A3002DF278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158804D61D2E02A3002DF278 /* Assets.xcassets */; };
+		158804DA1D2E02A3002DF278 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158804D81D2E02A3002DF278 /* LaunchScreen.storyboard */; };
+		158804E51D2E02A3002DF278 /* Did_Duke_WinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 158804E41D2E02A3002DF278 /* Did_Duke_WinTests.m */; };
+		158804F01D2E02A3002DF278 /* Did_Duke_WinUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 158804EF1D2E02A3002DF278 /* Did_Duke_WinUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		158804E11D2E02A3002DF278 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 158804BC1D2E02A3002DF278 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 158804C31D2E02A3002DF278;
+			remoteInfo = "Did Duke Win";
+		};
+		158804EC1D2E02A3002DF278 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 158804BC1D2E02A3002DF278 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 158804C31D2E02A3002DF278;
+			remoteInfo = "Did Duke Win";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		158804C41D2E02A3002DF278 /* Did Duke Win.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Did Duke Win.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		158804C81D2E02A3002DF278 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		158804CA1D2E02A3002DF278 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		158804CB1D2E02A3002DF278 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		158804CD1D2E02A3002DF278 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		158804CE1D2E02A3002DF278 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		158804D11D2E02A3002DF278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		158804D41D2E02A3002DF278 /* Did_Duke_Win.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Did_Duke_Win.xcdatamodel; sourceTree = "<group>"; };
+		158804D61D2E02A3002DF278 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		158804D91D2E02A3002DF278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		158804DB1D2E02A3002DF278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		158804E01D2E02A3002DF278 /* Did Duke WinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Did Duke WinTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		158804E41D2E02A3002DF278 /* Did_Duke_WinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Did_Duke_WinTests.m; sourceTree = "<group>"; };
+		158804E61D2E02A3002DF278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		158804EB1D2E02A3002DF278 /* Did Duke WinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Did Duke WinUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		158804EF1D2E02A3002DF278 /* Did_Duke_WinUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Did_Duke_WinUITests.m; sourceTree = "<group>"; };
+		158804F11D2E02A3002DF278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		158804C11D2E02A3002DF278 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158804DD1D2E02A3002DF278 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158804E81D2E02A3002DF278 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		158804BB1D2E02A3002DF278 = {
+			isa = PBXGroup;
+			children = (
+				158804C61D2E02A3002DF278 /* Did Duke Win */,
+				158804E31D2E02A3002DF278 /* Did Duke WinTests */,
+				158804EE1D2E02A3002DF278 /* Did Duke WinUITests */,
+				158804C51D2E02A3002DF278 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		158804C51D2E02A3002DF278 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				158804C41D2E02A3002DF278 /* Did Duke Win.app */,
+				158804E01D2E02A3002DF278 /* Did Duke WinTests.xctest */,
+				158804EB1D2E02A3002DF278 /* Did Duke WinUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		158804C61D2E02A3002DF278 /* Did Duke Win */ = {
+			isa = PBXGroup;
+			children = (
+				158804CA1D2E02A3002DF278 /* AppDelegate.h */,
+				158804CB1D2E02A3002DF278 /* AppDelegate.m */,
+				158804CD1D2E02A3002DF278 /* ViewController.h */,
+				158804CE1D2E02A3002DF278 /* ViewController.m */,
+				158804D01D2E02A3002DF278 /* Main.storyboard */,
+				158804D61D2E02A3002DF278 /* Assets.xcassets */,
+				158804D81D2E02A3002DF278 /* LaunchScreen.storyboard */,
+				158804DB1D2E02A3002DF278 /* Info.plist */,
+				158804D31D2E02A3002DF278 /* Did_Duke_Win.xcdatamodeld */,
+				158804C71D2E02A3002DF278 /* Supporting Files */,
+			);
+			path = "Did Duke Win";
+			sourceTree = "<group>";
+		};
+		158804C71D2E02A3002DF278 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				158804C81D2E02A3002DF278 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		158804E31D2E02A3002DF278 /* Did Duke WinTests */ = {
+			isa = PBXGroup;
+			children = (
+				158804E41D2E02A3002DF278 /* Did_Duke_WinTests.m */,
+				158804E61D2E02A3002DF278 /* Info.plist */,
+			);
+			path = "Did Duke WinTests";
+			sourceTree = "<group>";
+		};
+		158804EE1D2E02A3002DF278 /* Did Duke WinUITests */ = {
+			isa = PBXGroup;
+			children = (
+				158804EF1D2E02A3002DF278 /* Did_Duke_WinUITests.m */,
+				158804F11D2E02A3002DF278 /* Info.plist */,
+			);
+			path = "Did Duke WinUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		158804C31D2E02A3002DF278 /* Did Duke Win */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 158804F41D2E02A3002DF278 /* Build configuration list for PBXNativeTarget "Did Duke Win" */;
+			buildPhases = (
+				158804C01D2E02A3002DF278 /* Sources */,
+				158804C11D2E02A3002DF278 /* Frameworks */,
+				158804C21D2E02A3002DF278 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Did Duke Win";
+			productName = "Did Duke Win";
+			productReference = 158804C41D2E02A3002DF278 /* Did Duke Win.app */;
+			productType = "com.apple.product-type.application";
+		};
+		158804DF1D2E02A3002DF278 /* Did Duke WinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 158804F71D2E02A3002DF278 /* Build configuration list for PBXNativeTarget "Did Duke WinTests" */;
+			buildPhases = (
+				158804DC1D2E02A3002DF278 /* Sources */,
+				158804DD1D2E02A3002DF278 /* Frameworks */,
+				158804DE1D2E02A3002DF278 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				158804E21D2E02A3002DF278 /* PBXTargetDependency */,
+			);
+			name = "Did Duke WinTests";
+			productName = "Did Duke WinTests";
+			productReference = 158804E01D2E02A3002DF278 /* Did Duke WinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		158804EA1D2E02A3002DF278 /* Did Duke WinUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 158804FA1D2E02A3002DF278 /* Build configuration list for PBXNativeTarget "Did Duke WinUITests" */;
+			buildPhases = (
+				158804E71D2E02A3002DF278 /* Sources */,
+				158804E81D2E02A3002DF278 /* Frameworks */,
+				158804E91D2E02A3002DF278 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				158804ED1D2E02A3002DF278 /* PBXTargetDependency */,
+			);
+			name = "Did Duke WinUITests";
+			productName = "Did Duke WinUITests";
+			productReference = 158804EB1D2E02A3002DF278 /* Did Duke WinUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		158804BC1D2E02A3002DF278 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dylan Peters";
+				TargetAttributes = {
+					158804C31D2E02A3002DF278 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					158804DF1D2E02A3002DF278 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 158804C31D2E02A3002DF278;
+					};
+					158804EA1D2E02A3002DF278 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 158804C31D2E02A3002DF278;
+					};
+				};
+			};
+			buildConfigurationList = 158804BF1D2E02A3002DF278 /* Build configuration list for PBXProject "Did Duke Win" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 158804BB1D2E02A3002DF278;
+			productRefGroup = 158804C51D2E02A3002DF278 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				158804C31D2E02A3002DF278 /* Did Duke Win */,
+				158804DF1D2E02A3002DF278 /* Did Duke WinTests */,
+				158804EA1D2E02A3002DF278 /* Did Duke WinUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		158804C21D2E02A3002DF278 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				158804DA1D2E02A3002DF278 /* LaunchScreen.storyboard in Resources */,
+				158804D71D2E02A3002DF278 /* Assets.xcassets in Resources */,
+				158804D21D2E02A3002DF278 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158804DE1D2E02A3002DF278 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158804E91D2E02A3002DF278 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		158804C01D2E02A3002DF278 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				158804CF1D2E02A3002DF278 /* ViewController.m in Sources */,
+				158804CC1D2E02A3002DF278 /* AppDelegate.m in Sources */,
+				158804C91D2E02A3002DF278 /* main.m in Sources */,
+				158804D51D2E02A3002DF278 /* Did_Duke_Win.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158804DC1D2E02A3002DF278 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				158804E51D2E02A3002DF278 /* Did_Duke_WinTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		158804E71D2E02A3002DF278 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				158804F01D2E02A3002DF278 /* Did_Duke_WinUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		158804E21D2E02A3002DF278 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 158804C31D2E02A3002DF278 /* Did Duke Win */;
+			targetProxy = 158804E11D2E02A3002DF278 /* PBXContainerItemProxy */;
+		};
+		158804ED1D2E02A3002DF278 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 158804C31D2E02A3002DF278 /* Did Duke Win */;
+			targetProxy = 158804EC1D2E02A3002DF278 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		158804D01D2E02A3002DF278 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				158804D11D2E02A3002DF278 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		158804D81D2E02A3002DF278 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				158804D91D2E02A3002DF278 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		158804F21D2E02A3002DF278 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		158804F31D2E02A3002DF278 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		158804F51D2E02A3002DF278 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Did Duke Win/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Peters.Did-Duke-Win";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		158804F61D2E02A3002DF278 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Did Duke Win/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Peters.Did-Duke-Win";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		158804F81D2E02A3002DF278 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Did Duke WinTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Peters.Did-Duke-WinTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Did Duke Win.app/Did Duke Win";
+			};
+			name = Debug;
+		};
+		158804F91D2E02A3002DF278 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Did Duke WinTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Peters.Did-Duke-WinTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Did Duke Win.app/Did Duke Win";
+			};
+			name = Release;
+		};
+		158804FB1D2E02A3002DF278 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Did Duke WinUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Peters.Did-Duke-WinUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Did Duke Win";
+			};
+			name = Debug;
+		};
+		158804FC1D2E02A3002DF278 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Did Duke WinUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Peters.Did-Duke-WinUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Did Duke Win";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		158804BF1D2E02A3002DF278 /* Build configuration list for PBXProject "Did Duke Win" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158804F21D2E02A3002DF278 /* Debug */,
+				158804F31D2E02A3002DF278 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		158804F41D2E02A3002DF278 /* Build configuration list for PBXNativeTarget "Did Duke Win" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158804F51D2E02A3002DF278 /* Debug */,
+				158804F61D2E02A3002DF278 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		158804F71D2E02A3002DF278 /* Build configuration list for PBXNativeTarget "Did Duke WinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158804F81D2E02A3002DF278 /* Debug */,
+				158804F91D2E02A3002DF278 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		158804FA1D2E02A3002DF278 /* Build configuration list for PBXNativeTarget "Did Duke WinUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158804FB1D2E02A3002DF278 /* Debug */,
+				158804FC1D2E02A3002DF278 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		158804D31D2E02A3002DF278 /* Did_Duke_Win.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				158804D41D2E02A3002DF278 /* Did_Duke_Win.xcdatamodel */,
+			);
+			currentVersion = 158804D41D2E02A3002DF278 /* Did_Duke_Win.xcdatamodel */;
+			path = Did_Duke_Win.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 158804BC1D2E02A3002DF278 /* Project object */;
+}
