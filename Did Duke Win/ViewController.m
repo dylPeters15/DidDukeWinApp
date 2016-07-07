@@ -48,10 +48,18 @@ NSURL *scoreURL;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateInfo)
                                                  name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeDelegateObservers) name:UIApplicationWillTerminateNotification object:nil];
+}
+
+- (void) removeDelegateObservers {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidBecomeActiveNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillTerminateNotification object:nil];
 }
 
 - (void) updateInfo{
-    NSLog(@"22222");
     if ([(AppDelegate *)[[UIApplication sharedApplication] delegate] hasWinLossInfo]){
         [yesNoTextView setText:[(AppDelegate *)[[UIApplication sharedApplication] delegate] getWinLossInfo]];
         if ([[yesNoTextView.text lowercaseString] isEqualToString:@"yes"]){
@@ -79,7 +87,6 @@ NSURL *scoreURL;
 
 -(void) scoreButtonClicked:(UIButton *)button{
     [[UIApplication sharedApplication] openURL:scoreURL];
-    NSLog(@"score button clicked");
 }
 
 - (void) applyConstraints {
