@@ -504,6 +504,7 @@
 				158804F61D2E02A3002DF278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		158804F71D2E02A3002DF278 /* Build configuration list for PBXNativeTarget "Did Duke WinTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +513,7 @@
 				158804F91D2E02A3002DF278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		158804FA1D2E02A3002DF278 /* Build configuration list for PBXNativeTarget "Did Duke WinUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +522,7 @@
 				158804FC1D2E02A3002DF278 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
