@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,6 @@
 UITextView *yesNoTextView;
 UIButton *scoreButton;
 NSURL *scoreURL;
-
 
 
 - (void)viewDidLoad {
@@ -45,16 +45,28 @@ NSURL *scoreURL;
     
     [self applyConstraints];
     
-    @try {
-        
-        [self updateYesNo];
-        [self updateScore];
-        [self getScoreURL];
-    } @catch (NSException *exception) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Connect to Internet" message:@"Could not determine if Duke won." delegate:NULL cancelButtonTitle:@"Ok" otherButtonTitles:NULL, nil];
-        [alert show];
-    } @finally {
-        
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateInfo)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void) updateInfo{
+    NSLog(@"22222");
+    if ([(AppDelegate *)[[UIApplication sharedApplication] delegate] hasWinLossInfo]){
+        [yesNoTextView setText:[(AppDelegate *)[[UIApplication sharedApplication] delegate] getWinLossInfo]];
+    } else {
+        [yesNoTextView setText:@""];
+    }
+    if ([(AppDelegate *)[[UIApplication sharedApplication] delegate] hasScoreInfo]){
+        [scoreButton setTitle:[(AppDelegate *)[[UIApplication sharedApplication] delegate] getScoreInfo] forState:UIControlStateNormal];
+    } else {
+        [scoreButton setTitle:@"" forState:UIControlStateNormal];
+    }
+    if ([(AppDelegate *)[[UIApplication sharedApplication] delegate] hasScoreURL]){
+        [scoreButton setUserInteractionEnabled:true];
+        scoreURL = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getScoreURL];
+    } else {
+        [scoreButton setUserInteractionEnabled:false];
     }
 }
 
@@ -89,62 +101,62 @@ NSURL *scoreURL;
     //set font size
     
 }
-
--(void) updateYesNo {
-    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
-    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
-    if (string == NULL){
-        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
-    }
-    NSString *subString = [string substringWithRange:NSMakeRange([string rangeOfString:@"</p>"].location-2, 2)];
-    UIColor *textColor = [UIColor blackColor];
-    NSString *textString = @"";
-    if ([[subString lowercaseString] isEqualToString:@"no"]){
-        textColor = [UIColor redColor];
-        textString = @"NO";
-    } else {
-        textColor = [UIColor greenColor];
-        textString = @"YES";
-    }
-    [yesNoTextView setTextColor:textColor];
-    [yesNoTextView setText:textString];
-    NSLog(@"%@",subString);
-}
-
--(void) updateScore {
-    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
-    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
-    if (string == NULL){
-        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
-    }
-    NSRange range = [string rangeOfString:@"</a>"];
-    NSUInteger index = range.location;
-    while (index > 0 && [string characterAtIndex:index] != (NSUInteger)'>'){
-        index--;
-    }
-    if (index != 0){
-        index++;
-    }
-    NSString *substring = [string substringWithRange:NSMakeRange(index, range.location-index)];
-    [scoreButton setTitle:substring forState:UIControlStateNormal];
-    NSLog(@"%@",substring);
-}
-
--(void) getScoreURL{
-    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
-    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
-    if (string == NULL){
-        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
-    }
-    NSRange startingRange = [string rangeOfString:@"<a href='"];
-    NSUInteger index = startingRange.location+startingRange.length;
-    while (index < string.length && [string characterAtIndex:index] != (NSUInteger)39){
-        index++;
-    }
-    NSString *substring = [string substringWithRange:NSMakeRange(startingRange.location+startingRange.length,index-startingRange.location-startingRange.length)];
-    scoreURL = [NSURL URLWithString:substring];
-    NSLog(@"%@",scoreURL.absoluteString);
-}
+//
+//-(void) updateYesNo {
+//    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
+//    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+//    if (string == NULL){
+//        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
+//    }
+//    NSString *subString = [string substringWithRange:NSMakeRange([string rangeOfString:@"</p>"].location-2, 2)];
+//    UIColor *textColor = [UIColor blackColor];
+//    NSString *textString = @"";
+//    if ([[subString lowercaseString] isEqualToString:@"no"]){
+//        textColor = [UIColor redColor];
+//        textString = @"NO";
+//    } else {
+//        textColor = [UIColor greenColor];
+//        textString = @"YES";
+//    }
+//    [yesNoTextView setTextColor:textColor];
+//    [yesNoTextView setText:textString];
+//    NSLog(@"%@",subString);
+//}
+//
+//-(void) updateScore {
+//    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
+//    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+//    if (string == NULL){
+//        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
+//    }
+//    NSRange range = [string rangeOfString:@"</a>"];
+//    NSUInteger index = range.location;
+//    while (index > 0 && [string characterAtIndex:index] != (NSUInteger)'>'){
+//        index--;
+//    }
+//    if (index != 0){
+//        index++;
+//    }
+//    NSString *substring = [string substringWithRange:NSMakeRange(index, range.location-index)];
+//    [scoreButton setTitle:substring forState:UIControlStateNormal];
+//    NSLog(@"%@",substring);
+//}
+//
+//-(void) getScoreURL{
+//    NSURL *url = [NSURL URLWithString:@"https://www.diddukewin.com/"];
+//    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+//    if (string == NULL){
+//        @throw [NSException exceptionWithName:@"could not connect to internet exception" reason:NULL userInfo:NULL];
+//    }
+//    NSRange startingRange = [string rangeOfString:@"<a href='"];
+//    NSUInteger index = startingRange.location+startingRange.length;
+//    while (index < string.length && [string characterAtIndex:index] != (NSUInteger)39){
+//        index++;
+//    }
+//    NSString *substring = [string substringWithRange:NSMakeRange(startingRange.location+startingRange.length,index-startingRange.location-startingRange.length)];
+//    scoreURL = [NSURL URLWithString:substring];
+//    NSLog(@"%@",scoreURL.absoluteString);
+//}
 
 
 - (UIInterfaceOrientationMask) supportedInterfaceOrientations {

@@ -20,6 +20,15 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+- (bool) hasWinLossInfo;
+- (bool) hasScoreInfo;
+- (bool) hasScoreURL;
+
+- (NSString *) getWinLossInfo;
+- (NSString *) getScoreInfo;
+- (NSURL *) getScoreURL;
+
+
 
 @end
 
