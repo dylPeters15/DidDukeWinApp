@@ -15,7 +15,7 @@
 
 @implementation ViewController
 
-UITextView *yesNoTextView;
+UITextField *yesNoTextField;
 UIButton *scoreButton;
 NSURL *scoreURL;
 
@@ -23,24 +23,25 @@ NSURL *scoreURL;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    yesNoTextView = [[UITextView alloc] init];
+    yesNoTextField = [[UITextField alloc] init];
     scoreButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
-    [yesNoTextView setText:@"N/A"];
+    [yesNoTextField setText:@"N/A"];
     [scoreButton setTitle:@"0-0" forState:UIControlStateNormal];
     
-    [yesNoTextView setBackgroundColor:[UIColor clearColor]];
+    [yesNoTextField setBackgroundColor:[UIColor clearColor]];
     [scoreButton setBackgroundColor:[UIColor clearColor]];
     
-    [yesNoTextView setTextAlignment:NSTextAlignmentCenter];
+    [yesNoTextField setTextAlignment:NSTextAlignmentCenter];
+    [yesNoTextField setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
     
-    [yesNoTextView setUserInteractionEnabled:false];
+    [yesNoTextField setUserInteractionEnabled:false];
     [scoreButton addTarget:self action:@selector(scoreButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    [yesNoTextView sizeToFit];
-    [yesNoTextView sizeToFit];
+    [yesNoTextField sizeToFit];
+    [yesNoTextField sizeToFit];
     
-    [self.view addSubview:yesNoTextView];
+    [self.view addSubview:yesNoTextField];
     [self.view addSubview:scoreButton];
     
     [self applyConstraints];
@@ -61,16 +62,16 @@ NSURL *scoreURL;
 
 - (void) updateInfo{
     if ([(AppDelegate *)[[UIApplication sharedApplication] delegate] hasWinLossInfo]){
-        [yesNoTextView setText:[(AppDelegate *)[[UIApplication sharedApplication] delegate] getWinLossInfo]];
-        if ([[yesNoTextView.text lowercaseString] isEqualToString:@"yes"]){
-            [yesNoTextView setTextColor:[UIColor greenColor]];
-        } else if ([[yesNoTextView.text lowercaseString] isEqualToString:@"no"]){
-            [yesNoTextView setTextColor:[UIColor redColor]];
+        [yesNoTextField setText:[(AppDelegate *)[[UIApplication sharedApplication] delegate] getWinLossInfo]];
+        if ([[yesNoTextField.text lowercaseString] isEqualToString:@"yes"]){
+            [yesNoTextField setTextColor:[UIColor greenColor]];
+        } else if ([[yesNoTextField.text lowercaseString] isEqualToString:@"no"]){
+            [yesNoTextField setTextColor:[UIColor redColor]];
         } else {
-            [yesNoTextView setTextColor:[UIColor blackColor]];
+            [yesNoTextField setTextColor:[UIColor blackColor]];
         }
     } else {
-        [yesNoTextView setText:@""];
+        [yesNoTextField setText:@""];
     }
     if ([(AppDelegate *)[[UIApplication sharedApplication] delegate] hasScoreInfo]){
         [scoreButton setTitle:[(AppDelegate *)[[UIApplication sharedApplication] delegate] getScoreInfo] forState:UIControlStateNormal];
@@ -91,29 +92,32 @@ NSURL *scoreURL;
 
 - (void) applyConstraints {
     [self.view setTranslatesAutoresizingMaskIntoConstraints:false];
-    [yesNoTextView setTranslatesAutoresizingMaskIntoConstraints:false];
+    [yesNoTextField setTranslatesAutoresizingMaskIntoConstraints:false];
     [scoreButton setTranslatesAutoresizingMaskIntoConstraints:false];
     
     //set size
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:yesNoTextView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.25 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:yesNoTextField attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.25 constant:0.0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:yesNoTextView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:0.25 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:yesNoTextField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:0.25 constant:0.0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scoreButton attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.25 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scoreButton attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:0.25 constant:0.0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scoreButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:0.25 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scoreButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:0.25 constant:0.0]];
     
     //set layout
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:yesNoTextView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:yesNoTextField attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:yesNoTextView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:yesNoTextField attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scoreButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
     
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scoreButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:yesNoTextView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:scoreButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:yesNoTextField attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
     
     //set font size
-    
+    [yesNoTextField setMinimumFontSize:1];
+    [yesNoTextField setFont:[UIFont fontWithName:yesNoTextField.font.fontName size:200]];
+    [yesNoTextField setAdjustsFontSizeToFitWidth:true];
+    [scoreButton sizeToFit];
 }
 
 - (UIInterfaceOrientationMask) supportedInterfaceOrientations {
